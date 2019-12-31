@@ -96,13 +96,13 @@ public class TestBase {
 		try {
 			Thread.sleep(5000);
 			Message msg = emailUtils.getLatestMessage();
-			String msgSubject = msg.getSubject().toLowerCase();
-			if(msgSubject.contains(mailContent.toLowerCase())) {
+			String msgContent = emailUtils.getMessageContent(msg).toLowerCase();
+			if(msgContent.contains(mailContent.toLowerCase())) {
 				System.out.println("success.....Mail sent");
 				return true;
 			}else{
 				System.out.println("Failed.....Mail Not Delivered");
-				System.out.println("Mail Subject is : "+msgSubject);
+				System.out.println("Mail Subject is : "+msgContent);
 				return false;
 			}
 		} catch (Exception e) {

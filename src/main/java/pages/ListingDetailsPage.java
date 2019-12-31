@@ -27,13 +27,11 @@ public class ListingDetailsPage extends PageBase {
 	public WebElement quickRegisterationLeadButton ;
 	@FindBy(xpath = "//*[@id=\"notification-modal\"]/div/div/div[1]/button")
 	WebElement notificationModalCloseButton;
-	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/input[2]")
-	WebElement notificationFrame ;
-	@FindBy(xpath = "//*[@id=\"listingContactWrapper\"]/div[1]/div[1]/div[1]/form/button")
+	@FindBy(xpath = "/html/body/div[9]/div[1]/div[1]/div/section/div[2]/div[2]/div[1]/div[1]/div[1]/form/button")
 	WebElement requestCallButton ;
 	@FindBy(xpath = "/html/body/div[9]/div[1]/div[1]/div/section/div[2]/div[2]/div[1]/div[1]/div[1]/div/a")
 	WebElement numberAppears;
-	@FindBy(linkText="سيتواصل معك المعلن في أقرب وقت.")
+	@FindBy(xpath="//*[@id=\"listingContactWrapper\"]/div[1]/div[1]/div[1]/div")
 	WebElement alertSuccessMsgRequestCall;
 
 	public void fillQuickRegistration(String userName , String phoneNumber){
@@ -75,8 +73,7 @@ public class ListingDetailsPage extends PageBase {
 		}
 	}
 	public boolean isRequestSent(){
-		wait.until(ExpectedConditions.visibilityOf(alertSuccessMsgRequestCall));
-		if(alertSuccessMsgRequestCall.getText().contains("سيتواصل معك المعلن في أقرب وقت.")){
+		if(alertSuccessMsgRequestCall.getText().contains("سيتواصل معك المعلن في أقرب")){
 			System.out.println("Success...the request sent");
 			return true;
 		}else{
@@ -84,7 +81,7 @@ public class ListingDetailsPage extends PageBase {
 			return false;
 		}
 	}
-	public void waitUnilAlertAppears(){
+	public void waitUntilAlertAppears(){
 
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
