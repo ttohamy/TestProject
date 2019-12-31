@@ -34,24 +34,13 @@ public class RequestCallTest extends TestBase {
 		openRequestCallListing();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
-		listingDetailsObject.waitUnilAlertAppears();
+		listingDetailsObject.waitUntilAlertAppears();
 		driver.switchTo().alert().accept();
 		Assert.assertTrue(listingDetailsObject.isRequestSent());
-//		Assert.assertTrue(isMailDelivered("test"));
+		Assert.assertTrue(isMailDelivered(name));
 		removeStorage();
 		clearCookies();
 	}
-//	@Test(priority=1)
-//	public void existingUserCanInitiatLead(){
-//		System.out.println("Existing user try to initiate a lead....");
-//		listingDetailsObject = new ListingDetailsPage(driver);
-//		openListingDetailsPage();
-//		listingDetailsObject.fillQuickRegistration("my name", phoneNumber);
-//		removeStorage();
-//		clearCookies();
-//		refresh();
-//	}
-
 	@Test(priority=2)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to initiate a lead for first time ....");
