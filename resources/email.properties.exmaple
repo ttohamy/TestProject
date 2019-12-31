@@ -1,0 +1,6 @@
+mail.smtp.host=
+mail.smtp.socketFactory.port=
+mail.smtp.socketFactory.class=
+mail.smtp.auth=
+mail.smtp.port=
+mail.transport.protocol=
