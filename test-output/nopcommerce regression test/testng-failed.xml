@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [nopcommerce regression test]">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="regression test(failed)">
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="closeDriver"/>
+          <include name="userCanLoginSuccessfully"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- regression test(failed) -->
+</suite> <!-- Failed suite [nopcommerce regression test] -->

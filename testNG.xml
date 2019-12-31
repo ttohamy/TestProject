@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Leads regression test">
+<parameter name="browser" value="chrome"></parameter>
+	<test name="regression test">
+		<classes>
+			<class name="tests.LoginTest" />
+		</classes>
+	</test>
+</suite>
