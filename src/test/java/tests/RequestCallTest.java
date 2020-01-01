@@ -70,13 +70,13 @@ public class RequestCallTest extends TestBase {
 		homeObject = mockHomePage();
 		homeObject.openLoginPage();
 		loginObject.login(username3,password3);
-		openRequestCallListing();
-		listingDetailsObject.closeNotificationModal();
-		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
-		listingDetailsObject.quickRegisterationLeadButton.click();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
+		listingDetailsObject.quickRegisterationLeadButton.click();
+		openRequestCallListing();
+		listingDetailsObject.closeNotificationModal();
+		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		Assert.assertTrue(isMailDelivered("md"));
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
