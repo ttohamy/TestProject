@@ -50,11 +50,12 @@ public class RequestCallTest extends TestBase {
 		homeObject.openLoginPage();
 		loginObject.login(username2,password2);
 		listingDetailsObject.closeNotificationModal();
-		openShowPhoneNumberListing();
+		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
-		listingDetailsObject.openQuickRegistrationPopUp();
+		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear());
+		boolean requestStatus = listingDetailsObject.isRequestSent();
+		Assert.assertTrue(requestStatus);
 		Assert.assertTrue(isMailDelivered("aqarmap live"));
 		removeStorage();
 		clearCookies();
