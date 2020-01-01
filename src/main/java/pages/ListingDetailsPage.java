@@ -17,7 +17,7 @@ public class ListingDetailsPage extends PageBase {
 	WebDriverWait wait ;
 
 
-	@FindBy(xpath = "/html/body/div[9]/div[1]/div[1]/div/section/div[2]/div[2]/div[1]/div[1]/div[1]/a")
+	@FindBy(id = "te-phone-number")
 	WebElement showPhoneNumberButton ;
 	@FindBy(id = "lead_name")
 	WebElement quickRegisterationUserNameTextBox ;
@@ -27,7 +27,7 @@ public class ListingDetailsPage extends PageBase {
 	public WebElement quickRegisterationLeadButton ;
 	@FindBy(xpath = "//*[@id=\"notification-modal\"]/div/div/div[1]/button")
 	WebElement notificationModalCloseButton;
-	@FindBy(xpath = "/html/body/div[9]/div[1]/div[1]/div/section/div[2]/div[2]/div[1]/div[1]/div[1]/form/button")
+	@FindBy(id = "te-call-request")
 	WebElement requestCallButton ;
 	@FindBy(xpath = "/html/body/div[9]/div[1]/div[1]/div/section/div[2]/div[2]/div[1]/div[1]/div[1]/div/a")
 	WebElement numberAppears;
@@ -49,7 +49,7 @@ public class ListingDetailsPage extends PageBase {
 		click(showPhoneNumberButton);
 	}
 	public void openQuickRegistrationPopUpRequestCall(){
-		wait.until(ExpectedConditions.elementToBeClickable(requestCallButton));
+		wait.until(ExpectedConditions.visibilityOf(requestCallButton));
 		click(requestCallButton);
 	}
 
