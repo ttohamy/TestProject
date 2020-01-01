@@ -72,8 +72,8 @@ public class ListingDetailsPage extends PageBase {
 			System.out.println("No notification modal");
 		}
 	}
-	public boolean isRequestSent(){
-		if(alertSuccessMsgRequestCall.getText().contains("سيتواصل معك المعلن في أقرب")){
+	public boolean isRequestSent(WebDriver driver){
+		if(driver.getPageSource().contains("سيتواصل معك المعلن في أقرب")){
 			System.out.println("Success...the request sent");
 			return true;
 		}else{
