@@ -36,7 +36,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
 		listingDetailsObject.waitUntilAlertAppears();
 		driver.switchTo().alert().accept();
-		Assert.assertTrue(listingDetailsObject.isRequestSent());
+		Assert.assertTrue(listingDetailsObject.isRequestSent(driver));
 		Assert.assertTrue(isMailDelivered(name));
 		removeStorage();
 		clearCookies();
@@ -54,7 +54,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
-		boolean requestStatus = listingDetailsObject.isRequestSent();
+		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
 		Assert.assertTrue(isMailDelivered("aqarmap live"));
 		removeStorage();
