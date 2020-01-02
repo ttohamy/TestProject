@@ -13,7 +13,7 @@ public class HomePage extends PageBase  {
 		wait = new WebDriverWait(driver,20);
 	}
 	WebDriverWait wait ;
-	@FindBy(xpath = "/html/body/div[2]/div/section/nav/div/div/div[2]/ul[2]/li[1]/a")
+	@FindBy(id = "te-login-button")
 	WebElement loginButton ;
 	
 	public void openLoginPage() {
