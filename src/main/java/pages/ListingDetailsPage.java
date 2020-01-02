@@ -53,6 +53,12 @@ public class ListingDetailsPage extends PageBase {
 		addTextToElement(quickRegisterationNumebrTextBox, phoneNumber);
 		submitQuickRegistrationForm();
 	}
+	public void fillQuickRegistration(String email ){
+		wait.until(ExpectedConditions.visibilityOf(quickRegisterationUserNameTextBox));
+		addTextToElement(quickRegisterationEmailTextBox,email);
+		submitQuickRegistrationForm();
+	}
+
 	public void submitQuickRegistrationForm(){
 		wait.until(ExpectedConditions.elementToBeClickable(quickRegisterationLeadButton));
 		click(quickRegisterationLeadButton);

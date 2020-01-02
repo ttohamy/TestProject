@@ -17,7 +17,7 @@ public class HomePage extends PageBase  {
 	WebElement loginButton ;
 	
 	public void openLoginPage() {
-		wait.until(ExpectedConditions.visibilityOf(loginButton));
+		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		click(loginButton);
 	}
 

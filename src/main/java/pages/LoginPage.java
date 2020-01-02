@@ -21,7 +21,7 @@ public class LoginPage extends PageBase {
 	@FindBy(name = "_submit")
 	WebElement loginButton  ;
 	public void login(String username , String password) {
-		wait.until(ExpectedConditions.visibilityOf(usernameTextBox));
+		wait.until(ExpectedConditions.elementToBeClickable(usernameTextBox));
 		addTextToElement(usernameTextBox,username);
 		addTextToElement(passwordTextBox, password);
 		clickEnter();
