@@ -29,7 +29,7 @@ public class RequestCallTest extends TestBase {
 
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
-		System.out.println("New user try to initiate a lead ....");
+		System.out.println("New user try to Request a Call ....");
 		listingDetailsObject = mockListingDetailsPage();
 		openRequestCallListing();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
@@ -43,7 +43,7 @@ public class RequestCallTest extends TestBase {
 	}
 	@Test(priority=2)
 	public void loggedInUserCanInitiatLeadFirstTime(){
-		System.out.println("Logged in user try to initiate a lead for first time ....");
+		System.out.println("Logged in user try to Request a Call for first time ....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
@@ -64,7 +64,7 @@ public class RequestCallTest extends TestBase {
 
 	@Test(priority=3)
 	public void loggedInUserCanInitiatLeadSecondtTime() {
-		System.out.println("Logged in user try to initiate a lead for second time .....");
+		System.out.println("Logged in user try to Request a Call for second time .....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();

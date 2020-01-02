@@ -23,6 +23,8 @@ public class ListingDetailsPage extends PageBase {
 	WebElement quickRegisterationUserNameTextBox ;
 	@FindBy(id = "lead_phone")
 	WebElement quickRegisterationNumebrTextBox;
+	@FindBy(id="lead_email")
+	WebElement quickRegisterationEmailTextBox;
 	@FindBy(id = "quickLeadButton")
 	public WebElement quickRegisterationLeadButton ;
 	@FindBy(xpath = "//*[@id=\"notification-modal\"]/div/div/div[1]/button")
@@ -33,10 +35,21 @@ public class ListingDetailsPage extends PageBase {
 	WebElement numberAppears;
 	@FindBy(xpath="//*[@id=\"listingContactWrapper\"]/div[1]/div[1]/div[1]/div")
 	WebElement alertSuccessMsgRequestCall;
+	@FindBy(id= "te-open-chat")
+	WebElement openSendMsgButton;
+	@FindBy(id="te-chat-textarea")
+	WebElement chatModalTextArea ;
 
 	public void fillQuickRegistration(String userName , String phoneNumber){
 		wait.until(ExpectedConditions.visibilityOf(quickRegisterationUserNameTextBox));
 		addTextToElement(quickRegisterationUserNameTextBox, userName);
+		addTextToElement(quickRegisterationNumebrTextBox, phoneNumber);
+		submitQuickRegistrationForm();
+	}
+	public void fillQuickRegistration(String userName ,  String email ,String phoneNumber ){
+		wait.until(ExpectedConditions.visibilityOf(quickRegisterationUserNameTextBox));
+		addTextToElement(quickRegisterationUserNameTextBox, userName);
+		addTextToElement(quickRegisterationEmailTextBox,email);
 		addTextToElement(quickRegisterationNumebrTextBox, phoneNumber);
 		submitQuickRegistrationForm();
 	}
@@ -52,6 +65,10 @@ public class ListingDetailsPage extends PageBase {
 		wait.until(ExpectedConditions.visibilityOf(requestCallButton));
 		click(requestCallButton);
 	}
+	public void openQuickRegistrationPopUpChat(){
+		wait.until(ExpectedConditions.elementToBeClickable(openSendMsgButton));
+		click(openSendMsgButton);
+	}
 
 	public boolean isPhoneNumberAppear(){
 		wait.until(ExpectedConditions.elementToBeClickable(numberAppears));
@@ -64,14 +81,6 @@ public class ListingDetailsPage extends PageBase {
 			return false;
 		}
 	}
-	public void closeNotificationModal() {
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(notificationModalCloseButton));
-			notificationModalCloseButton.click();
-		}catch (Exception e){
-			System.out.println("No notification modal");
-		}
-	}
 	public boolean isRequestSent(WebDriver driver){
 		if(driver.getPageSource().contains("سيتواصل معك المعلن في أقرب")){
 			System.out.println("Success...the request sent");
@@ -81,6 +90,26 @@ public class ListingDetailsPage extends PageBase {
 			return false;
 		}
 	}
+	public boolean isChatModalAppear(){
+		wait.until(ExpectedConditions.elementToBeClickable(chatModalTextArea));
+		if(chatModalTextArea.isDisplayed()) {
+			System.out.println("Success...Chat modal appears");
+			return true;
+		}
+		else{
+			System.out.println("Success...Chat modal not appear");
+			return false;
+		}
+	}
+	public void closeNotificationModal() {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(notificationModalCloseButton));
+			notificationModalCloseButton.click();
+		}catch (Exception e){
+			System.out.println("No notification modal");
+		}
+	}
+
 	public void waitUntilAlertAppears(){
 
 		try {
