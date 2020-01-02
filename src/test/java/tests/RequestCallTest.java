@@ -32,6 +32,7 @@ public class RequestCallTest extends TestBase {
 		System.out.println("New user try to Request a Call ....");
 		listingDetailsObject = mockListingDetailsPage();
 		openRequestCallListing();
+		waitForLoad(driver);
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
 		listingDetailsObject.waitUntilAlertAppears();
@@ -41,13 +42,13 @@ public class RequestCallTest extends TestBase {
 		removeStorage();
 		clearCookies();
 	}
-	@Test(priority=2)
+	@Test(priority=1)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to Request a Call for first time ....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
-		homeObject.openLoginPage();
+		openLoginPage();
 		loginObject.login(username2,password2);
 		listingDetailsObject.closeNotificationModal();
 		openRequestCallListing();
@@ -62,13 +63,14 @@ public class RequestCallTest extends TestBase {
 		refresh();
 	}
 
-	@Test(priority=3)
+	@Test(priority=2)
 	public void loggedInUserCanInitiatLeadSecondtTime() {
 		System.out.println("Logged in user try to Request a Call for second time .....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
-		homeObject.openLoginPage();
+		waitForLoad(driver);
+		openLoginPage();
 		loginObject.login(username3,password3);
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();

@@ -76,9 +76,8 @@ public class ListingDetailsPage extends PageBase {
 		click(openSendMsgButton);
 	}
 
-	public boolean isPhoneNumberAppear(){
-		wait.until(ExpectedConditions.elementToBeClickable(numberAppears));
-		if(numberAppears.isDisplayed()) {
+	public boolean isPhoneNumberAppear(WebDriver driver){
+		if(driver.getPageSource().contains("01283122213")) {
 			System.out.println("Success....Phone number appears");
 			return true;
 		}

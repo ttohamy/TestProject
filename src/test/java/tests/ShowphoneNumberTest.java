@@ -24,6 +24,8 @@ public class ShowphoneNumberTest extends TestBase {
 	String password3 = PropertyManager.getInstance().getPassword3();
 
 
+
+
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
 		System.out.println("New user try to Show Phone Number....");
@@ -31,49 +33,38 @@ public class ShowphoneNumberTest extends TestBase {
 		openShowPhoneNumberListing();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear());
+		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered(name));
 		removeStorage();
 		clearCookies();
 	}
-//	@Test(priority=1)
-//	public void existingUserCanInitiatLead(){
-//		System.out.println("Existing user try to initiate a lead....");
-//		listingDetailsObject = new ListingDetailsPage(driver);
-//		openListingDetailsPage();
-//		listingDetailsObject.fillQuickRegistration("my name", phoneNumber);
-//		removeStorage();
-//		clearCookies();
-//		refresh();
-//	}
-
-	@Test(priority=2)
+	@Test(priority=1)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to Show Phone Number for first time ....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
-		homeObject.openLoginPage();
+		openLoginPage();
 		loginObject.login(username2,password2);
 		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear());
+		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("aqarmap live"));
 		removeStorage();
 		clearCookies();
 		refresh();
 	}
 
-	@Test(priority=3)
+	@Test(priority=2)
 	public void loggedInUserCanInitiatLeadSecondtTime() {
 		System.out.println("Logged in user try to Show Phone Number for second time .....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
-		homeObject.openLoginPage();
+		openLoginPage();
 		loginObject.login(username3,password3);
 		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
@@ -82,6 +73,7 @@ public class ShowphoneNumberTest extends TestBase {
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
+		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("md"));
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
