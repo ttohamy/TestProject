@@ -72,6 +72,9 @@ public class TestBase {
 		driver.navigate().to("https://aqarmap.com.eg/ar/listing/2484708-for-rent-apartment-sharqia");
 		waitForLoad(driver);
 	}
+	public static  void openLoginPage(){
+		driver.navigate().to("https://aqarmap.com.eg/ar/login");
+	}
 
 	public static void openRequestCallListing() {
 		driver.navigate().to("https://aqarmap.com.eg/ar/listing/2497109-for-rent-apartment-sharqia");
@@ -94,7 +97,7 @@ public class TestBase {
 	}
 	public boolean isMailDelivered(String mailContent){
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(7000);
 			Message msg = emailUtils.getLatestMessage();
 			String msgContent = emailUtils.getMessageContent(msg).toLowerCase();
 			if(msgContent.contains(mailContent.toLowerCase())) {
