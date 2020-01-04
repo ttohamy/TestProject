@@ -18,6 +18,10 @@ Stack Requirements
 Installation
 --------
 $ git clone git@github.com:aqarmap/QA-testing.git
+if you are using Windows you must add drivers folder to the project 
+then add the following line to TestBase class to startDriver method 
+System.setProperty("webdriver.chrome.driver","path to driver.exe");
+
 
 
 
