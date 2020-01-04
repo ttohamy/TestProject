@@ -14,18 +14,15 @@ public class RequestCallTest extends TestBase {
 	ListingDetailsPage listingDetailsObject ; 
 	LoginPage loginObject;
 	HomePage homeObject ;
-
-
 	AdminPanelLeadsTest leadsTest ;
 	Faker faker = new Faker();
 	String  name = "mohamed mahroos";
 	String email = faker.internet().safeEmailAddress();
 	String phoneNumber = "0111"+faker.phoneNumber().subscriberNumber(8);
-	String username2 = PropertyManager.getInstance().getUsername2();
-	String password2 = PropertyManager.getInstance().getPassword2();
-	String username3 = PropertyManager.getInstance().getUsername3();
-	String password3 = PropertyManager.getInstance().getPassword3();
-
+	String username4 = PropertyManager.getInstance().getUsername4();
+	String password4 = PropertyManager.getInstance().getPassword4();
+	String username5 = PropertyManager.getInstance().getUsername5();
+	String password5 = PropertyManager.getInstance().getPassword5();
 
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
@@ -42,6 +39,7 @@ public class RequestCallTest extends TestBase {
 		removeStorage();
 		clearCookies();
 	}
+
 	@Test(priority=1)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to Request a Call for first time ....");
@@ -49,7 +47,7 @@ public class RequestCallTest extends TestBase {
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
 		openLoginPage();
-		loginObject.login(username2,password2);
+		loginObject.login(username4,password4);
 		listingDetailsObject.closeNotificationModal();
 		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
@@ -57,7 +55,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.submitQuickRegistrationForm();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
-		Assert.assertTrue(isMailDelivered("aqarmap live"));
+		Assert.assertTrue(isMailDelivered("tohamy"));
 		removeStorage();
 		clearCookies();
 		refresh();
@@ -71,15 +69,17 @@ public class RequestCallTest extends TestBase {
 		homeObject = mockHomePage();
 		waitForLoad(driver);
 		openLoginPage();
-		loginObject.login(username3,password3);
+		loginObject.login(username5,password5);
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
-		listingDetailsObject.quickRegisterationLeadButton.click();
+		listingDetailsObject.submitQuickRegistrationForm();
 		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
-		Assert.assertTrue(isMailDelivered("md"));
+		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
+		Assert.assertTrue(requestStatus);
+		Assert.assertTrue(isMailDelivered("testing"));
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
 		return  new ListingDetailsPage(driver);

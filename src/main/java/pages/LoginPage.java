@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,14 +25,15 @@ public class LoginPage extends PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(usernameTextBox));
 		addTextToElement(usernameTextBox,username);
 		addTextToElement(passwordTextBox, password);
-		clickEnter();
-		try{
-		wait.until(ExpectedConditions.urlToBe("https://aqarmap.com.eg/ar/"));
+		submitLogin();
+		try {
+			wait.until(ExpectedConditions.urlToBe("https://aqarmap.com.eg/ar/"));
 		}catch (Exception e){
-		    System.out.println("Failed....I can't log in");
-        }
-
-
+			System.out.println("Failed...i can't log in");
+		}
+	}
+	public void submitLogin(){
+		clickEnter();
 	}
 	
 
