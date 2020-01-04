@@ -11,8 +11,6 @@ public class ShowphoneNumberTest extends TestBase {
 	ListingDetailsPage listingDetailsObject ; 
 	LoginPage loginObject;
 	HomePage homeObject ;
-
-
 	AdminPanelLeadsTest leadsTest ; 
 	Faker faker = new Faker();
 	String  name = "mohamed mahroos";
@@ -22,9 +20,6 @@ public class ShowphoneNumberTest extends TestBase {
 	String password2 = PropertyManager.getInstance().getPassword2();
 	String username3 = PropertyManager.getInstance().getUsername3();
 	String password3 = PropertyManager.getInstance().getPassword3();
-
-
-
 
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
@@ -38,6 +33,7 @@ public class ShowphoneNumberTest extends TestBase {
 		removeStorage();
 		clearCookies();
 	}
+
 	@Test(priority=1)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to Show Phone Number for first time ....");
@@ -69,7 +65,7 @@ public class ShowphoneNumberTest extends TestBase {
 		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
-		listingDetailsObject.quickRegisterationLeadButton.click();
+		listingDetailsObject.submitQuickRegistrationForm();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
