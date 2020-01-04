@@ -130,6 +130,8 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+src/test/java/tests/JustTest.java
+
 # Exclude maven wrapper
 !/.mvn/wrapper/maven-wrapper.jar
 
