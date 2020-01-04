@@ -51,6 +51,13 @@ public class TestBase {
 			chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 			driver = new ChromeDriver(chromeOptions);
 		}
+		else if(browserName.equalsIgnoreCase("chrome-headless")) {
+			System.out.println("Headless is perfect");
+			ChromeOptions option = new  ChromeOptions();
+			option.addArguments("--headless");
+			option.addArguments("window-size=2000,3000");
+			driver = new ChromeDriver(option);
+		}
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.navigate().to("https://aqarmap.com.eg/ar/");

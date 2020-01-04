@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Leads regression test">
-<parameter name="browser" value="chrome"></parameter>
+<parameter name="browser" value="chrome-headless"></parameter>
 	<test name="regression test">
 		<classes>
 			<class name="tests.LoginTest" />

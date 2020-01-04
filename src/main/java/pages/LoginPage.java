@@ -19,7 +19,7 @@ public class LoginPage extends PageBase {
 	WebElement usernameTextBox ; 
 	@FindBy(name = "password")
 	WebElement passwordTextBox ; 
-	@FindBy(name = "_submit")
+	@FindBy(xpath = "//*[@id=\"vueApp\"]/section/div/div/div[2]/form/div/button")
 	WebElement loginButton  ;
 	public void login(String username , String password) {
 		wait.until(ExpectedConditions.elementToBeClickable(usernameTextBox));
@@ -28,12 +28,15 @@ public class LoginPage extends PageBase {
 		submitLogin();
 		try {
 			wait.until(ExpectedConditions.urlToBe("https://aqarmap.com.eg/ar/"));
+			System.out.println("Success...Now the user is logged in");
 		}catch (Exception e){
 			System.out.println("Failed...i can't log in");
 		}
 	}
 	public void submitLogin(){
-		clickEnter();
+		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+		click(loginButton);
+//		clickEnter();
 	}
 	
 
