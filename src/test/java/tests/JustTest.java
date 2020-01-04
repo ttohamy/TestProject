@@ -1,5 +1,8 @@
 package tests;
 
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,8 +15,6 @@ public class JustTest extends TestBase {
     String username = "JAnKQvHKyP";
     String password = "3TG9GLiMPh";
     String query = "select *  from users where id = 1";
-
-
     @Test
     public void userCanAddToLocalStorage() throws InterruptedException {
         try {
@@ -35,6 +36,21 @@ public class JustTest extends TestBase {
         }
         con.close();
         return email;
+    }
+    @Test
+    public void connectToAPI(){
+        String searchQueryApi = "http://dummy.restapiexample.com/api/v1/employee/1";
+        JsonNode body = null;
+        try {
+                body = Unirest.get(searchQueryApi)
+                    .asJson()
+                    .getBody();
+        } catch (UnirestException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(body);         // gives the full json response
+        System.out.println(body.getObject().get("employee_name"));         // gives the full json response
     }
 
 }
