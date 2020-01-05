@@ -67,9 +67,9 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
-		waitForLoad(driver);
 		openLoginPage();
 		loginObject.login(username5,password5);
+		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
