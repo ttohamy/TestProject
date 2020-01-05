@@ -136,9 +136,9 @@ src/test/java/tests/JustTest.java
 !/.mvn/wrapper/maven-wrapper.jar
 
 ### TestNG ###
-test-output
+test-output/
 *.iml
-drivers
+drivers/
 
 
 ### Java ###
