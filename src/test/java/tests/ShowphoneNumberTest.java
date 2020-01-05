@@ -42,8 +42,8 @@ public class ShowphoneNumberTest extends TestBase {
 		homeObject = mockHomePage();
 		openLoginPage();
 		loginObject.login(username2,password2);
-		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
+		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
@@ -61,8 +61,8 @@ public class ShowphoneNumberTest extends TestBase {
 		homeObject = mockHomePage();
 		openLoginPage();
 		loginObject.login(username3,password3);
-		listingDetailsObject.closeNotificationModal();
 		openRequestCallListing();
+		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
 		openShowPhoneNumberListing();
