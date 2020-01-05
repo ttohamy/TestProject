@@ -20,6 +20,11 @@ public class LoginTest extends TestBase {
 		loginObject = new LoginPage(driver);
 		loginObject.login(username, password);
 		Assert.assertEquals(driver.getCurrentUrl(), homePageUrl);
+
+
+
+
+
 	}
 
 }

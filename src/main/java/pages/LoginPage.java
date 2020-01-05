@@ -19,7 +19,7 @@ public class LoginPage extends PageBase {
 	WebElement usernameTextBox ; 
 	@FindBy(name = "password")
 	WebElement passwordTextBox ; 
-	@FindBy(xpath = "//*[@id=\"vueApp\"]/section/div/div/div[2]/form/div/button")
+	@FindBy(xpath = "/html/body/div[4]/section/div/div/div[2]/form/div/button")
 	WebElement loginButton  ;
 	public void login(String username , String password) {
 		wait.until(ExpectedConditions.elementToBeClickable(usernameTextBox));

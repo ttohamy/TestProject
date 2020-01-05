@@ -11,7 +11,7 @@ public class ListingDetailsPage extends PageBase {
 
 	public ListingDetailsPage(WebDriver driver) {
 		super(driver);
-		wait = new WebDriverWait(driver,20);
+		wait = new WebDriverWait(driver,3);
 	}
 
 	WebDriverWait wait ;
@@ -66,10 +66,12 @@ public class ListingDetailsPage extends PageBase {
 		click(quickRegisterationLeadButton);
 	}
 	public void openQuickRegistrationPopUp()  {
+		
 		wait.until(ExpectedConditions.elementToBeClickable(showPhoneNumberButton));
 		click(showPhoneNumberButton);
 	}
 	public void openQuickRegistrationPopUpRequestCall(){
+
 		wait.until(ExpectedConditions.elementToBeClickable(requestCallButton));
 		click(requestCallButton);
 	}
