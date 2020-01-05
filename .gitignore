@@ -135,6 +135,11 @@ src/test/java/tests/JustTest.java
 # Exclude maven wrapper
 !/.mvn/wrapper/maven-wrapper.jar
 
+### TestNG ###
+test-output
+*.iml
+drivers
+
 
 ### Java ###
 *.class
