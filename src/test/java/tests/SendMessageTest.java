@@ -54,6 +54,7 @@ public class SendMessageTest extends TestBase {
     @Test(priority = 2)
     public void loggedInUserCanInitiateLeadForFirstTime() {
         System.out.println("Logged in  user try to Send Message for First Time....");
+        removeStorage();
         listingDetailsObject = mockListingDetailsPage();
         loginObject = mockLoginPage();
         homeObject = mockHomePage();
@@ -75,6 +76,7 @@ public class SendMessageTest extends TestBase {
     @Test(priority = 3)
     public void loggedInUserCanInitiateLeadForSecondTime() {
         System.out.println("Logged in user try to Request a Call for second time .....");
+        removeStorage();
         listingDetailsObject = mockListingDetailsPage();
         loginObject = mockLoginPage();
         homeObject = mockHomePage();

@@ -63,6 +63,7 @@ public class RequestCallTest extends TestBase {
 	@Test(priority=2)
 	public void loggedInUserCanInitiatLeadSecondtTime() {
 		System.out.println("Logged in user try to Request a Call for second time .....");
+		removeStorage();
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
