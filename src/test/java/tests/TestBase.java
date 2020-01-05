@@ -72,7 +72,7 @@ public class TestBase {
 	}
 	@AfterClass
 	public void closeDriver() {
-//		driver.quit();
+		driver.quit();
 	}
 	public void removeStorage(){
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

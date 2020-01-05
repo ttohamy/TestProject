@@ -11,7 +11,7 @@ public class ListingDetailsPage extends PageBase {
 
 	public ListingDetailsPage(WebDriver driver) {
 		super(driver);
-		wait = new WebDriverWait(driver,3);
+		wait = new WebDriverWait(driver,20);
 	}
 
 	WebDriverWait wait ;
