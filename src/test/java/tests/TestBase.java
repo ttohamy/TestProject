@@ -39,9 +39,16 @@ public class TestBase {
 	}
 	@BeforeClass
 	@Parameters({"browser"})
-	public void startDriver(@Optional("chrome") String browserName) {	
+	public void startDriver(@Optional("chrome") String browserName) {
+		if(System.getProperty("os.name").toLowerCase().contains("windows"))
+		{
+		  	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");
+		}
+		
 		if(browserName.equalsIgnoreCase("chrome"))
+		{
 			driver = new ChromeDriver();
+		}
 		else if(browserName.equalsIgnoreCase("firefox"))
 			driver = new FirefoxDriver();
 		else if(browserName.equalsIgnoreCase("mobileView")){
