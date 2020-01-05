@@ -85,6 +85,7 @@ public class TestBase {
 
 	public static void openRequestCallListing() {
 		driver.navigate().to("https://aqarmap.com.eg/ar/listing/2497109-for-rent-apartment-sharqia");
+		waitForLoad(driver);
 	}
 	public static void openLeadsForListing() {
 		driver.get("https://aqarmap.com.eg/en/admin/leads/?search=listing_id&q=2484708&start_date=&end_date=");

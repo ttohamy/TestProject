@@ -50,7 +50,6 @@ public class RequestCallTest extends TestBase {
 		loginObject.login(username4,password4);
 		listingDetailsObject.closeNotificationModal();
 		openRequestCallListing();
-		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
@@ -69,13 +68,11 @@ public class RequestCallTest extends TestBase {
 		homeObject = mockHomePage();
 		openLoginPage();
 		loginObject.login(username5,password5);
-		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
 		openRequestCallListing();
-		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
