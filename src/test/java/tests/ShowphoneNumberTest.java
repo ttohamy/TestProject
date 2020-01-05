@@ -44,7 +44,6 @@ public class ShowphoneNumberTest extends TestBase {
 		loginObject.login(username2,password2);
 		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
-		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
@@ -62,12 +61,11 @@ public class ShowphoneNumberTest extends TestBase {
 		homeObject = mockHomePage();
 		openLoginPage();
 		loginObject.login(username3,password3);
-		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
+		openRequestCallListing();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
 		openShowPhoneNumberListing();
-		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("md"));

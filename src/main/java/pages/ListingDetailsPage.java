@@ -27,7 +27,7 @@ public class ListingDetailsPage extends PageBase {
 	WebElement quickRegisterationEmailTextBox;
 	@FindBy(id = "quickLeadButton")
 	public WebElement quickRegisterationLeadButton ;
-	@FindBy(xpath = "//*[@id=\"notification-modal\"]/div/div/div[1]/button")
+	@FindBy(xpath = "//*[@id=\"notification-modal\"]/div/div/div[3]/input[2]")
 	WebElement notificationModalCloseButton;
 	@FindBy(id = "te-call-request")
 	WebElement requestCallButton ;
@@ -39,6 +39,8 @@ public class ListingDetailsPage extends PageBase {
 	WebElement openSendMsgButton;
 	@FindBy(id="te-chat-textarea")
 	WebElement chatModalTextArea ;
+	@FindBy(id="search_btn")
+	WebElement searchButton;
 
 	public void fillQuickRegistration(String userName , String phoneNumber){
 		wait.until(ExpectedConditions.visibilityOf(quickRegisterationUserNameTextBox));
@@ -64,11 +66,11 @@ public class ListingDetailsPage extends PageBase {
 		click(quickRegisterationLeadButton);
 	}
 	public void openQuickRegistrationPopUp()  {
-		wait.until(ExpectedConditions.visibilityOf(showPhoneNumberButton));
+		wait.until(ExpectedConditions.elementToBeClickable(showPhoneNumberButton));
 		click(showPhoneNumberButton);
 	}
 	public void openQuickRegistrationPopUpRequestCall(){
-		wait.until(ExpectedConditions.visibilityOf(requestCallButton));
+		wait.until(ExpectedConditions.elementToBeClickable(requestCallButton));
 		click(requestCallButton);
 	}
 	public void openQuickRegistrationPopUpChat(){
@@ -110,6 +112,7 @@ public class ListingDetailsPage extends PageBase {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(notificationModalCloseButton));
 			notificationModalCloseButton.click();
+			wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 		}catch (Exception e){
 			System.out.println("No notification modal");
 		}
