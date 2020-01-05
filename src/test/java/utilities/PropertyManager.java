@@ -16,6 +16,8 @@ public class PropertyManager {
 	private static String password4;
 	private static String username5;
 	private static String password5;
+	private static String adminUserName ;
+	private static String adminPassword ;
     private static final Object lock = new Object();
     private static String propertyFilePath = System.getProperty("user.dir")+
             "/resources/configuration.properties";
@@ -46,6 +48,8 @@ public class PropertyManager {
         password4 = prop.getProperty("password4");
 		username5 = prop.getProperty("username5");
 		password5 = prop.getProperty("password5");
+		adminUserName = prop.getProperty("adminusername");
+		adminPassword = prop.getProperty("adminpassword");
     }
 	
 	public String getUsername1() {
@@ -73,6 +77,10 @@ public class PropertyManager {
 	}
 	public String getPassword5() {
 		return password5 ;
+	}
+	public String getAdminUserName() { return adminUserName; }
+	public String getAdminPassword() {
+		return adminPassword;
 	}
 	
 }
