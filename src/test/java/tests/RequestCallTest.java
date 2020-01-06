@@ -34,7 +34,7 @@ public class RequestCallTest extends TestBase {
 		driver.switchTo().alert().accept();
 		Assert.assertTrue(listingDetailsObject.isRequestSent(driver));
 		Assert.assertTrue(isMailDelivered(name));
-		clearCookies();
+		clearData();
 	}
 
 	@Test(priority=1)

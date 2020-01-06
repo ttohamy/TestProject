@@ -32,10 +32,10 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-//		Assert.assertTrue(isMailDelivered(name));
+		Assert.assertTrue(isMailDelivered(name));
 		clearData();
-		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
+//		openLoginPage();
+//		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
 		clearData();
 	}
 
