@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0890f9f-9519-4237-bfd2-b72b2abb57fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AdminPanelLeadsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AdminPanelLeadsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RequestCallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RequestCallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SendMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SendMessageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ShowphoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ShowphoneNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pages/AdminPanelLeadsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/AdminPanelLeadsPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/RequestCallTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/RequestCallTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/SendMessageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/SendMessageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/ShowphoneNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/ShowphoneNumberTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/TestBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/TestBase$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/TestBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/EmailUtils$EmailFolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/EmailUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/PropertyManager.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
