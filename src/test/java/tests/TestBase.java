@@ -1,16 +1,10 @@
 package tests;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,6 +16,9 @@ import utilities.EmailUtils;
 import utilities.PropertyManager;
 
 import javax.mail.Message;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 	public static WebDriver driver ;
@@ -94,11 +91,16 @@ public class TestBase {
 		driver.navigate().to("https://aqarmap.com.eg/ar/listing/2497109-for-rent-apartment-sharqia");
 		waitForLoad(driver);
 	}
+
 	public static void openLeadsForListing() {
 		driver.get("https://aqarmap.com.eg/en/admin/leads/?search=listing_id&q=2484708&start_date=&end_date=");
 	}
 	public void clearCookies() {
 		driver.manage().deleteAllCookies();
+	}
+	public void clearData(){
+		clearCookies();
+		removeStorage();
 	}
 	public static void waitForLoad(WebDriver driver) {
 		ExpectedCondition<Boolean> pageLoadCondition = new

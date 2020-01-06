@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0890f9f-9519-4237-bfd2-b72b2abb57fb" name="Default Changelist" comment="" />
+    <list default="true" id="e0890f9f-9519-4237-bfd2-b72b2abb57fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AdminPanelLeadsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AdminPanelLeadsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RequestCallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RequestCallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SendMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SendMessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ShowphoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ShowphoneNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pages/AdminPanelLeadsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/AdminPanelLeadsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/RequestCallTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/RequestCallTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/SendMessageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/SendMessageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/ShowphoneNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/ShowphoneNumberTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/TestBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/TestBase$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/TestBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/EmailUtils$EmailFolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/EmailUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/PropertyManager.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +78,7 @@
       <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ShowphoneNumberTest.loggedInUserCanInitiatLeadFirstTime">
+  <component name="RunManager" selected="TestNG.ShowphoneNumberTest.newUserCanInitiatLead">
     <configuration name="LoginTest.userCanLoginSuccessfully" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Aqarmap" />
       <extension name="coverage">
@@ -161,8 +177,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ShowphoneNumberTest.loggedInUserCanInitiatLeadFirstTime" />
         <item itemvalue="TestNG.ShowphoneNumberTest.newUserCanInitiatLead" />
+        <item itemvalue="TestNG.ShowphoneNumberTest.loggedInUserCanInitiatLeadFirstTime" />
         <item itemvalue="TestNG.LoginTest.userCanLoginSuccessfully" />
         <item itemvalue="TestNG.ShowphoneNumberTest" />
         <item itemvalue="TestNG.RequestCallTest.newUserCanInitiatLead" />
@@ -238,30 +254,30 @@
     </state>
     <state x="485" y="154" width="424" height="484" key="FileChooserDialogImpl/39.27.1327.741@39.27.1327.741" timestamp="1576408271193" />
     <state x="488" y="154" width="424" height="574" key="FileChooserDialogImpl/44.27.1322.741@44.27.1322.741" timestamp="1577952765187" />
-    <state width="1322" height="194" key="GridCell.Tab.0.bottom" timestamp="1578312431672">
+    <state width="1322" height="194" key="GridCell.Tab.0.bottom" timestamp="1578318947968">
       <screen x="44" y="27" width="1322" height="741" />
     </state>
     <state width="1281" height="346" key="GridCell.Tab.0.bottom/39.27.1327.741@39.27.1327.741" timestamp="1577225575968" />
     <state width="1279" height="175" key="GridCell.Tab.0.bottom/41.27.1325.741@41.27.1325.741" timestamp="1577290580125" />
-    <state width="1322" height="194" key="GridCell.Tab.0.bottom/44.27.1322.741@44.27.1322.741" timestamp="1578312431672" />
-    <state width="1322" height="194" key="GridCell.Tab.0.center" timestamp="1578312431671">
+    <state width="1322" height="194" key="GridCell.Tab.0.bottom/44.27.1322.741@44.27.1322.741" timestamp="1578318947968" />
+    <state width="1322" height="194" key="GridCell.Tab.0.center" timestamp="1578318947967">
       <screen x="44" y="27" width="1322" height="741" />
     </state>
     <state width="1281" height="346" key="GridCell.Tab.0.center/39.27.1327.741@39.27.1327.741" timestamp="1577225575968" />
     <state width="1279" height="175" key="GridCell.Tab.0.center/41.27.1325.741@41.27.1325.741" timestamp="1577290580124" />
-    <state width="1322" height="194" key="GridCell.Tab.0.center/44.27.1322.741@44.27.1322.741" timestamp="1578312431671" />
-    <state width="1322" height="194" key="GridCell.Tab.0.left" timestamp="1578312431670">
+    <state width="1322" height="194" key="GridCell.Tab.0.center/44.27.1322.741@44.27.1322.741" timestamp="1578318947967" />
+    <state width="1322" height="194" key="GridCell.Tab.0.left" timestamp="1578318947967">
       <screen x="44" y="27" width="1322" height="741" />
     </state>
     <state width="1281" height="346" key="GridCell.Tab.0.left/39.27.1327.741@39.27.1327.741" timestamp="1577225575967" />
     <state width="1279" height="175" key="GridCell.Tab.0.left/41.27.1325.741@41.27.1325.741" timestamp="1577290580124" />
-    <state width="1322" height="194" key="GridCell.Tab.0.left/44.27.1322.741@44.27.1322.741" timestamp="1578312431670" />
-    <state width="1322" height="194" key="GridCell.Tab.0.right" timestamp="1578312431671">
+    <state width="1322" height="194" key="GridCell.Tab.0.left/44.27.1322.741@44.27.1322.741" timestamp="1578318947967" />
+    <state width="1322" height="194" key="GridCell.Tab.0.right" timestamp="1578318947967">
       <screen x="44" y="27" width="1322" height="741" />
     </state>
     <state width="1281" height="346" key="GridCell.Tab.0.right/39.27.1327.741@39.27.1327.741" timestamp="1577225575968" />
     <state width="1279" height="175" key="GridCell.Tab.0.right/41.27.1325.741@41.27.1325.741" timestamp="1577290580124" />
-    <state width="1322" height="194" key="GridCell.Tab.0.right/44.27.1322.741@44.27.1322.741" timestamp="1578312431671" />
+    <state width="1322" height="194" key="GridCell.Tab.0.right/44.27.1322.741@44.27.1322.741" timestamp="1578318947967" />
     <state width="1322" height="244" key="GridCell.Tab.1.bottom" timestamp="1578255695584">
       <screen x="44" y="27" width="1322" height="741" />
     </state>
