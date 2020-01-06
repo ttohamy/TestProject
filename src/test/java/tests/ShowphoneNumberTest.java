@@ -2,6 +2,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
+import pages.AdminPanelLeadsPage;
 import pages.HomePage;
 import pages.ListingDetailsPage;
 import pages.LoginPage;
@@ -20,18 +21,22 @@ public class ShowphoneNumberTest extends TestBase {
 	String password2 = PropertyManager.getInstance().getPassword2();
 	String username3 = PropertyManager.getInstance().getUsername3();
 	String password3 = PropertyManager.getInstance().getPassword3();
+	AdminPanelLeadsPage adminPage ;
 
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
 		System.out.println("New user try to Show Phone Number....");
 		listingDetailsObject = mockListingDetailsPage();
+		adminPage = new AdminPanelLeadsPage(driver);
 		openShowPhoneNumberListing();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		Assert.assertTrue(isMailDelivered(name));
-		removeStorage();
-		clearCookies();
+//		Assert.assertTrue(isMailDelivered(name));
+		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
+		clearData();
 	}
 
 	@Test(priority=1)
@@ -48,8 +53,7 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.submitQuickRegistrationForm();
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("aqarmap live"));
-		removeStorage();
-		clearCookies();
+		clearData();
 		refresh();
 	}
 
@@ -79,5 +83,6 @@ public class ShowphoneNumberTest extends TestBase {
 	private static HomePage mockHomePage(){
 		return  new HomePage(driver);
 	}
+
 
 }

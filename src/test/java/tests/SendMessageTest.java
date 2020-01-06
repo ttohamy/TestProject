@@ -32,8 +32,7 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(name, email, phoneNumber);
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
-        removeStorage();
-        clearCookies();
+        clearData();
     }
 
     //not logged in existing user
@@ -46,8 +45,7 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(name, username2, phoneNumber);
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
-        removeStorage();
-        clearCookies();
+        clearData();
         refresh();
     }
 
@@ -68,8 +66,7 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(username2);
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
-        removeStorage();
-        clearCookies();
+        clearData();
         refresh();
     }
 
@@ -92,8 +89,7 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
-        removeStorage();
-        clearCookies();
+        clearData();
     }
 
 

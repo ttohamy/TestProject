@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ListingDetailsPage;
 import pages.LoginPage;
-import tests.AdminPanelLeadsTest;
-import tests.TestBase;
 import utilities.PropertyManager;
 
 public class RequestCallTest extends TestBase {
@@ -36,7 +34,6 @@ public class RequestCallTest extends TestBase {
 		driver.switchTo().alert().accept();
 		Assert.assertTrue(listingDetailsObject.isRequestSent(driver));
 		Assert.assertTrue(isMailDelivered(name));
-		removeStorage();
 		clearCookies();
 	}
 
@@ -55,8 +52,7 @@ public class RequestCallTest extends TestBase {
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
 		Assert.assertTrue(isMailDelivered("tohamy"));
-		removeStorage();
-		clearCookies();
+		clearData();
 		refresh();
 	}
 
