@@ -1,20 +1,15 @@
 package pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ListingDetailsPage extends PageBase {
 
 	public ListingDetailsPage(WebDriver driver) {
 		super(driver);
-		wait = new WebDriverWait(driver,20);
 	}
-
-	WebDriverWait wait ;
 
 
 	@FindBy(id = "te-phone-number")
