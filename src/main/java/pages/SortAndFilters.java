@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,5 +38,14 @@ public class SortAndFilters extends PageBase {
 	//open price filters
 	@FindBy(id="te-prices-container")
 	public WebElement openprice;
-	
+	@FindBy(xpath="/html/body/div[4]/div[3]/div[4]/div[2]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/div/div[2]/div/button")
+	public WebElement max;
+	@FindBy(xpath="/html/body/div[4]/div[3]/div[4]/div[2]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/div/div[1]/div/button")
+	public WebElement min;
+	@FindBy(xpath="//*[@id=\"priceRangesContainer\"]/div/div[1]/div/ul/li[5]/a")
+	public WebElement minPrice_400;
+	@FindBy(xpath="//*[@id=\"priceRangesContainer\"]/div/div[1]/div/ul/li[6]/a")
+	public WebElement minprice_500;
+	@FindBy(xpath="/html/body/div[4]/div[3]/div[4]/div[2]/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div/div/div[2]/div/ul/li[6]/a")
+	public WebElement maxprice_900;
 }
