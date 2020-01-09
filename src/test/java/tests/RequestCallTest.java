@@ -3,6 +3,7 @@ package tests;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AdminPanelLeadsPage;
 import pages.HomePage;
 import pages.ListingDetailsPage;
 import pages.LoginPage;
@@ -21,12 +22,14 @@ public class RequestCallTest extends TestBase {
 	String password4 = PropertyManager.getInstance().getPassword4();
 	String username5 = PropertyManager.getInstance().getUsername5();
 	String password5 = PropertyManager.getInstance().getPassword5();
+	AdminPanelLeadsPage adminPage ;
 
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
 		System.out.println("New user try to Request a Call ....");
 		listingDetailsObject = mockListingDetailsPage();
 		openRequestCallListing();
+		adminPage = new AdminPanelLeadsPage(driver);
 		waitForLoad(driver);
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
@@ -35,6 +38,10 @@ public class RequestCallTest extends TestBase {
 		Assert.assertTrue(listingDetailsObject.isRequestSent(driver));
 		Assert.assertTrue(isMailDelivered(name));
 		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+		clearData();
+
 	}
 
 	@Test(priority=1)
@@ -43,6 +50,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
+		adminPage = new AdminPanelLeadsPage(driver);
 		openLoginPage();
 		loginObject.login(username4,password4);
 		listingDetailsObject.closeNotificationModal();
@@ -54,6 +62,10 @@ public class RequestCallTest extends TestBase {
 		Assert.assertTrue(isMailDelivered("tohamy"));
 		clearData();
 		refresh();
+		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
+		clearData();
 	}
 
 	@Test(priority=2)
@@ -63,6 +75,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
+		adminPage = new AdminPanelLeadsPage(driver);
 		openLoginPage();
 		loginObject.login(username5,password5);
 		openShowPhoneNumberListing();
@@ -74,6 +87,10 @@ public class RequestCallTest extends TestBase {
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
 		Assert.assertTrue(isMailDelivered("testing"));
+		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded("Testing","1250552003","2497109",driver));
+		clearData();
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
 		return  new ListingDetailsPage(driver);

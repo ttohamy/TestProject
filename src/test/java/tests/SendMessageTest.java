@@ -3,6 +3,7 @@ package tests;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AdminPanelLeadsPage;
 import pages.HomePage;
 import pages.ListingDetailsPage;
 import pages.LoginPage;
@@ -21,24 +22,30 @@ public class SendMessageTest extends TestBase {
     String password2 = PropertyManager.getInstance().getPassword2();
     String username3 = PropertyManager.getInstance().getUsername3();
     String password3 = PropertyManager.getInstance().getPassword3();
-
+    AdminPanelLeadsPage adminPage ;
 
     @Test(priority = 0)
     public void newUserCanInitiateLead() {
         System.out.println("New user try to Send Message....");
         listingDetailsObject = mockListingDetailsPage();
+        adminPage = new AdminPanelLeadsPage(driver);
         openRequestCallListing();
         waitForLoad(driver);
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(name, email, phoneNumber);
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
+        openLoginPage();
+        Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        clearData();
+
     }
 
     //not logged in existing user
     @Test(priority = 1)
     public void existingUserCanInitiateLead() {
         System.out.println("Existing user try to Send Message....");
+        adminPage = new AdminPanelLeadsPage(driver);
         listingDetailsObject = mockListingDetailsPage();
         openRequestCallListing();
         waitForLoad(driver);
@@ -47,6 +54,9 @@ public class SendMessageTest extends TestBase {
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
+        openLoginPage();
+        Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        clearData();
     }
 
     @Test(priority = 2)
@@ -54,10 +64,11 @@ public class SendMessageTest extends TestBase {
         System.out.println("Logged in  user try to Send Message for First Time....");
         removeStorage();
         listingDetailsObject = mockListingDetailsPage();
+        adminPage = new AdminPanelLeadsPage(driver);
         loginObject = mockLoginPage();
         homeObject = mockHomePage();
         waitForLoad(driver);
-        homeObject.openLoginPage();
+        openLoginPage();
         loginObject.login(username2, password2);
         listingDetailsObject.closeNotificationModal();
         openRequestCallListing();
@@ -68,17 +79,20 @@ public class SendMessageTest extends TestBase {
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
+        openLoginPage();
+        Assert.assertTrue(adminPage.isLeadAdded("Aqarmap live","100077895","2497109",driver));
+        clearData();
     }
 
     @Test(priority = 3)
     public void loggedInUserCanInitiateLeadForSecondTime() {
         System.out.println("Logged in user try to Request a Call for second time .....");
         removeStorage();
+        adminPage = new AdminPanelLeadsPage(driver);
         listingDetailsObject = mockListingDetailsPage();
         loginObject = mockLoginPage();
         homeObject = mockHomePage();
-        waitForLoad(driver);
-        homeObject.openLoginPage();
+        openLoginPage();
         waitForLoad(driver);
         loginObject.login(username3, password3);
         openShowPhoneNumberListing();
@@ -89,6 +103,9 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
+        clearData();
+        openLoginPage();
+        Assert.assertTrue(adminPage.isLeadAdded("md","1118608831","2497109",driver));
         clearData();
     }
 

@@ -3,7 +3,7 @@
 <parameter name="browser" value="chrome-headless"></parameter>
 	<test name="regression test">
 		<classes>
-			<class name="tests.LoginTest" />
+			<class name="tests.ShowphoneNumberTest" />
 		</classes>
 	</test>
 </suite>

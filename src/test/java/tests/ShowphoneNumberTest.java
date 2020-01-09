@@ -34,8 +34,8 @@ public class ShowphoneNumberTest extends TestBase {
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered(name));
 		clearData();
-//		openLoginPage();
-//		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
 		clearData();
 	}
 
@@ -45,6 +45,7 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
+		adminPage = new AdminPanelLeadsPage(driver);
 		openLoginPage();
 		loginObject.login(username2,password2);
 		openShowPhoneNumberListing();
@@ -54,7 +55,10 @@ public class ShowphoneNumberTest extends TestBase {
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("aqarmap live"));
 		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded("Aqarmap Live","100077895","2484708",driver));
 		refresh();
+		clearData();
 	}
 
 	@Test(priority=2)
@@ -63,6 +67,7 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();
+		adminPage = new AdminPanelLeadsPage(driver);
 		openLoginPage();
 		loginObject.login(username3,password3);
 		openRequestCallListing();
@@ -73,6 +78,10 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUp();
 		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
 		Assert.assertTrue(isMailDelivered("md"));
+		clearData();
+		openLoginPage();
+		Assert.assertTrue(adminPage.isLeadAdded("md","1118608831","2484708",driver));
+		clearData();
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
 		return  new ListingDetailsPage(driver);
