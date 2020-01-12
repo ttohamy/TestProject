@@ -36,5 +36,23 @@ public void suggestsearches() {
 	option.selectByVisibleText("Abbas El Akkad");
 	
 }
+//open type list
+@FindBy(xpath="//*[@id=\"search-box\"]/div[1]/div[2]/div[1]/div[1]/div/button")
+public WebElement opentype;
+//aparts 
+@FindBy(xpath="/html/body/div[4]/div[3]/div/div/div/div/div/form[1]/div[1]/div[2]/div[1]/div[1]/div/div/div/ul/li[2]/a")
+public WebElement apartments;
+//open first listing
+@FindBy(id ="te-listing-card-4")
+public WebElement listing4;
+@FindBy(xpath="/html/body/div[4]/div[4]/div[7]/div/div/div/div[1]/button")
+public WebElement closesug;
+@FindBy(xpath="/html/body/div[4]/div[3]/div/div/div/div/div/form[1]/div[1]/div[2]/div[1]/div[1]/div/div/div/ul/li[4]/a")
+public WebElement shalehat;
 
+@FindBy(id ="te-listing-card-7")
+public WebElement listing7;
+@FindBy(id="te-next-search-result-page")
+public WebElement nextsearchpage;
 }
+
