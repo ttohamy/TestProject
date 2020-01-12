@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Leads regression test">
+<parameter name="browser" value="chrome-headless"></parameter>
+	<test name="regression test">
+		<classes>
+			<class name="tests.DeepSearch" />
+			<class name="tests.search"/>
+			<class name="tests.Filters_Compounds"/>
+			<class name="tests.Filters_price"/>
+			<class name="tests.SortPrice"/>
+			<class name="tests.SortSize"/>
+			<class name="tests.multisearch"/>
+		</classes>
+	</test>
+</suite>
