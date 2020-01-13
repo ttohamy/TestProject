@@ -71,6 +71,7 @@ public class ListingDetailsPage extends PageBase {
 		click(requestCallButton);
 	}
 	public void openQuickRegistrationPopUpChat(){
+		wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 		wait.until(ExpectedConditions.elementToBeClickable(openSendMsgButton));
 		click(openSendMsgButton);
 	}
