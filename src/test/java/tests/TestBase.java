@@ -130,5 +130,7 @@ public class TestBase {
 			return false;
 		}
 	}
-
+	public void openAddListingPage(){
+		driver.get("https://aqarmap.com.eg/ar/listing/initialize/init");
+	}
 }
