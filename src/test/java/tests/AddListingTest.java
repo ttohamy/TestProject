@@ -21,6 +21,10 @@ public class AddListingTest extends TestBase {
         loginPage.login(username,password);
         openAddListingPage();
         waitForLoad(driver);
-        addListingPage.selectPropertyType();
+        addListingPage.fillFirstPage();
+        addListingPage.fillSecondPage();
+        addListingPage.fillLocationsPage();
+        addListingPage.fillTitleAndDescription();
+        addListingPage.fillPaymentMethodPage();
     }
 }
