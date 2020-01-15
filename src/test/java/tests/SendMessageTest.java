@@ -62,7 +62,7 @@ public class SendMessageTest extends TestBase {
     @Test(priority = 2)
     public void loggedInUserCanInitiateLeadForFirstTime() {
         System.out.println("Logged in  user try to Send Message for First Time....");
-        removeStorage();
+        clearData();
         listingDetailsObject = mockListingDetailsPage();
         adminPage = new AdminPanelLeadsPage(driver);
         loginObject = mockLoginPage();
@@ -75,19 +75,19 @@ public class SendMessageTest extends TestBase {
         waitForLoad(driver);
         listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
-        listingDetailsObject.fillQuickRegistration(username2);
+        listingDetailsObject.fillQuickRegistration("mohamed.mohsen@aqarmap.com");
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("Aqarmap live","100077895","2497109",driver));
+        Assert.assertTrue(adminPage.isLeadAdded("Mohamed","1007789870","2497109",driver));
         clearData();
     }
 
     @Test(priority = 3)
     public void loggedInUserCanInitiateLeadForSecondTime() {
         System.out.println("Logged in user try to Request a Call for second time .....");
-        removeStorage();
+        clearData();
         adminPage = new AdminPanelLeadsPage(driver);
         listingDetailsObject = mockListingDetailsPage();
         loginObject = mockLoginPage();
