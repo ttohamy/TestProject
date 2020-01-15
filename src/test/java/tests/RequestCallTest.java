@@ -86,10 +86,10 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		Assert.assertTrue(requestStatus);
-		Assert.assertTrue(isMailDelivered("testing"));
+		Assert.assertTrue(isMailDelivered("ahmed nagy"));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded("Testing","1250552003","2497109",driver));
+		Assert.assertTrue(adminPage.isLeadAdded("Ahmed Nagy","1061679853","2497109",driver));
 		clearData();
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
