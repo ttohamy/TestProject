@@ -40,6 +40,5 @@ public class AddListingTest extends TestBase {
         Assert.assertTrue(driver.getPageSource().contains("Chalet"));
         Assert.assertTrue(driver.getPageSource().contains("Abo Eid"));
         System.out.println("Success...You listing Status is Pending Payment");
-
     }
 }
