@@ -62,13 +62,11 @@ public class AddListingPage extends PageBase {
     WebElement warning;
     public void selectItemFromDropDown(WebElement dropdownLocator , WebElement dropdownItem ){
         try{
-            Thread.sleep(1000);
             if(!loadingSpinner.isDisplayed()){
                 wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
                 click(dropdownLocator);
                 wait.until(ExpectedConditions.elementToBeClickable(dropdownItem));
                 click(dropdownItem);
-                Thread.sleep(1000);
             }
         }catch (Exception e){
                 System.out.println("Failed...");

@@ -80,7 +80,7 @@ public class SendMessageTest extends TestBase {
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("Mohamed","1007789870","2497109",driver));
+        Assert.assertTrue(adminPage.isLeadAdded("mohamed.mohsen@aqarmap.com","1007789870","2497109",driver));
         clearData();
     }
 
@@ -100,7 +100,6 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(username3);
         openRequestCallListing();
-        listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
