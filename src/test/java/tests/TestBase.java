@@ -133,4 +133,7 @@ public class TestBase {
 	public void openAddListingPage(){
 		driver.get("https://aqarmap.com.eg/ar/listing/initialize/init");
 	}
+	public void openReviewPage(String listingID){
+		driver.get("https://aqarmap.com.eg/en/admin/listing/"+listingID+"/review/");
+	}
 }

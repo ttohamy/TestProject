@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AddListingPage;
 import pages.HomePage;
@@ -12,6 +13,8 @@ public class AddListingTest extends TestBase {
     LoginPage loginPage ;
     String username = PropertyManager.getInstance().getUsername3();
     String password = PropertyManager.getInstance().getPassword3();
+    String adminUsername = PropertyManager.getInstance().getAdminUserName();
+    String adminPassword = PropertyManager.getInstance().getAdminPassword();
     @Test
     public void userCanAddListing(){
         homePage = new HomePage(driver);
@@ -26,5 +29,17 @@ public class AddListingTest extends TestBase {
         addListingPage.fillLocationsPage();
         addListingPage.fillTitleAndDescription();
         addListingPage.fillPaymentMethodPage();
+        addListingPage.uploadPhotos();
+        String listingID = Integer.toString(addListingPage.getListingID(driver));
+        System.out.println(listingID);
+        openLoginPage();
+        loginPage.login(adminUsername,adminPassword);
+        openReviewPage(listingID);
+        Assert.assertTrue(driver.getPageSource().contains("Status: Pending Payment"));
+        Assert.assertTrue(driver.getPageSource().contains("For Rent"));
+        Assert.assertTrue(driver.getPageSource().contains("Chalet"));
+        Assert.assertTrue(driver.getPageSource().contains("Abo Eid"));
+        System.out.println("Success...You listing Status is Pending Payment");
+
     }
 }
