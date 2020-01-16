@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class AddListingPage extends PageBase {
     public AddListingPage(WebDriver driver) {
         super(driver);
@@ -51,11 +54,25 @@ public class AddListingPage extends PageBase {
     WebElement cashLi;
     @FindBy(id="price")
     WebElement priceTextArea ;
+    @FindBy(xpath = "/html/body/input")
+    WebElement uploadPhotosElement;
+    @FindBy(xpath = "/html/body/div[4]/div[3]/div[2]/div/div[1]/div/div[1]")
+    WebElement loadingSpinner;
+    @FindBy(xpath = "/html/body/div[4]/section/div/div/div[2]")
+    WebElement warning;
     public void selectItemFromDropDown(WebElement dropdownLocator , WebElement dropdownItem ){
-        wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
-        click(dropdownLocator);
-        wait.until(ExpectedConditions.elementToBeClickable(dropdownItem));
-        click(dropdownItem);
+        try{
+            Thread.sleep(1000);
+            if(!loadingSpinner.isDisplayed()){
+                wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
+                click(dropdownLocator);
+                wait.until(ExpectedConditions.elementToBeClickable(dropdownItem));
+                click(dropdownItem);
+                Thread.sleep(1000);
+            }
+        }catch (Exception e){
+                System.out.println("Failed...");
+        }
     }
     public void selectItemFromDropDown(WebElement dropdownLocator , WebElement dropdownItem ,String text){
         wait.until(ExpectedConditions.elementToBeClickable(locationDropdown));
@@ -72,6 +89,7 @@ public class AddListingPage extends PageBase {
         clickNextButton();
     }
     public void fillSecondPage(){
+        wait.until(ExpectedConditions.elementToBeClickable(roomsText));
         addTextToElement(roomsText,"4");
         addTextToElement(floorsText,"5");
         addTextToElement(bathsText,"2");
@@ -91,12 +109,35 @@ public class AddListingPage extends PageBase {
     }
     public void fillPaymentMethodPage(){
         selectItemFromDropDown(paymentMethodDropdown,cashLi);
+        wait.until(ExpectedConditions.elementToBeClickable(priceTextArea));
         addTextToElement(priceTextArea,"120000");
+        clickNextButton();
+    }
+    public void uploadPhotos(){
+        uploadPhotosElement.sendKeys("/home/tohamy/Pictures/add listing/add1.jpg");
         clickNextButton();
     }
     public void clickNextButton(){
         wait.until(ExpectedConditions.elementToBeClickable(nextButton));
         click(nextButton);
     }
+
+    public int getListingID(WebDriver driver) {
+        try{
+            Thread.sleep(1000);
+        }catch (Exception e){
+        }
+        wait.until(ExpectedConditions.elementToBeClickable(warning));
+        String resultLabel = driver.getCurrentUrl();
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(resultLabel);
+        int numberOfLeadsOfTheListing = 0 ;
+        while(m.find()) {
+            numberOfLeadsOfTheListing = Integer.parseInt(m.group());
+        }
+        return numberOfLeadsOfTheListing;
+    }
+
+
 
 }
