@@ -80,7 +80,7 @@ public class SendMessageTest extends TestBase {
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("Mohamed","1007789870","2497109",driver));
+        Assert.assertTrue(adminPage.isLeadAdded("mohamed.mohsen@aqarmap.com","100077895","2497109",driver));
         clearData();
     }
 
