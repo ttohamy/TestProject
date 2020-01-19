@@ -65,6 +65,7 @@ public class AddListingPage extends PageBase {
     public void selectItemFromDropDown(WebElement dropdownLocator, WebElement dropdownItem) {
         try {
             if (!loadingSpinner.isDisplayed()) {
+
                 wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
                 click(dropdownLocator);
                 wait.until(ExpectedConditions.elementToBeClickable(dropdownItem));

@@ -12,7 +12,7 @@ public class PageBase {
 
 	public PageBase(WebDriver driver) {
 		PageFactory.initElements(driver ,this);
-		wait = new WebDriverWait(driver, 20);
+		wait = new WebDriverWait(driver, 30);
 
 	}
 	protected static void click(WebElement element) {

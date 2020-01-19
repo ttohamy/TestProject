@@ -100,7 +100,6 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(username3);
         openRequestCallListing();
-        listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
