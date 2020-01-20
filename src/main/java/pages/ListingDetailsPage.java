@@ -61,12 +61,10 @@ public class ListingDetailsPage extends PageBase {
 		click(quickRegisterationLeadButton);
 	}
 	public void openQuickRegistrationPopUp()  {
-		
 		wait.until(ExpectedConditions.elementToBeClickable(showPhoneNumberButton));
 		click(showPhoneNumberButton);
 	}
 	public void openQuickRegistrationPopUpRequestCall(){
-
 		wait.until(ExpectedConditions.elementToBeClickable(requestCallButton));
 		click(requestCallButton);
 	}
@@ -112,7 +110,6 @@ public class ListingDetailsPage extends PageBase {
 			notificationModalCloseButton.click();
 			wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 		}catch (Exception e){
-			System.out.println("No notification modal");
 		}
 	}
 

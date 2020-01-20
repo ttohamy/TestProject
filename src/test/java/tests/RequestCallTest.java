@@ -47,6 +47,7 @@ public class RequestCallTest extends TestBase {
 	@Test(priority=1)
 	public void loggedInUserCanInitiatLeadFirstTime(){
 		System.out.println("Logged in user try to Request a Call for first time ....");
+		clearData();
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
 		homeObject = mockHomePage();

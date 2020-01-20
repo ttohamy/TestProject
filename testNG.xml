@@ -3,8 +3,6 @@
 <parameter name="browser" value="chrome-headless"></parameter>
 	<test name="regression test">
 		<classes>
-			<class name="tests.ShowphoneNumberTest" />
-			<class name="tests.SendMessageTest" />
 			<class name="tests.RequestCallTest" />
 		</classes>
 	</test>
