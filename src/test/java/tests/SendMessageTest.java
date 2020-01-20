@@ -22,6 +22,8 @@ public class SendMessageTest extends TestBase {
     String password2 = PropertyManager.getInstance().getPassword2();
     String username3 = PropertyManager.getInstance().getUsername3();
     String password3 = PropertyManager.getInstance().getPassword3();
+    String username4 = PropertyManager.getInstance().getUsername4();
+    String password4 = PropertyManager.getInstance().getPassword4();
     AdminPanelLeadsPage adminPage ;
 
     @Test(priority = 0)
@@ -69,18 +71,18 @@ public class SendMessageTest extends TestBase {
         homeObject = mockHomePage();
         waitForLoad(driver);
         openLoginPage();
-        loginObject.login(username2, password2);
+        loginObject.login(username4, password4);
         listingDetailsObject.closeNotificationModal();
         openRequestCallListing();
         waitForLoad(driver);
         listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
-        listingDetailsObject.fillQuickRegistration("mohamed.mohsen@aqarmap.com");
+        listingDetailsObject.fillQuickRegistration(username4);
         Assert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("mohamed.mohsen@aqarmap.com","100077895","2497109",driver));
+        Assert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
         clearData();
     }
 
