@@ -21,6 +21,7 @@ public class SortPrice extends TestBase {
         sf.sortopen.click();
         sf.hightolow.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search_btn")));
+        System.out.println("success searching sorted = high to low prices");
 
     }
 
@@ -34,10 +35,11 @@ public class SortPrice extends TestBase {
         int i2 = Integer.parseInt(assert2);
         String assert3 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[14]/div/div/div[2]/div/a/div[2]/span[1]")).getAttribute("content");
         int i3 = Integer.parseInt(assert3);
-        System.out.println(i + " " + i2 + " " + i3);
+        System.out.println(i + " first listing price "  + i2 + " 3rd listing price  " + i3+"  14th listing price ");
         assertTrue(i > i2, "Failure one");
         assertTrue(i2 > i3, "failure two");
         assertTrue(i > i3, "fail three");
+        System.out.println("Success, first listing > 3rd,  3rd listing > 14th");
     }
 
     @Test(priority = 3)
@@ -46,6 +48,7 @@ public class SortPrice extends TestBase {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         sf.sortopen.click();
         sf.lowtohigh.click();
+        System.out.println("switch from high to low>> low to high");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search_btn")));
         String assert1 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[1]/div/div/div[2]/div/a/div[2]/span[1]")).getAttribute("content");
         int i = Integer.parseInt(assert1);
@@ -57,6 +60,7 @@ public class SortPrice extends TestBase {
         assertTrue(i3 > i2, "Failure one");
         assertTrue(i2 > i, "failure two");
         assertTrue(i3 > i, "fail three");
+        System.out.println("first listing < 3rd, 3rd<14th Success");
     }
 
 
