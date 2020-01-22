@@ -16,6 +16,7 @@ public class multisearch extends TestBase {
     public void multisearch() throws InterruptedException {
         hp = new HomePage(driver);
         driver.navigate().to("https://aqarmap.com.eg/en/");
+        System.out.println("search 2 listings");
         WebDriverWait wait = new WebDriverWait(driver, 20);
         hp = new HomePage(driver);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search_btn")));
@@ -28,6 +29,7 @@ public class multisearch extends TestBase {
         hp.searchbtn.click();
         assertTrue(driver.getPageSource().contains("abu"));
         assertTrue(driver.getPageSource().contains("derb"));
-
+System.out.println("success searched and picked from suggested location ");
+System.out.println("searching on 2 locations");
     }
 }

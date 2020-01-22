@@ -27,17 +27,17 @@ public class SortSize extends TestBase {
     @Test(priority = 2)
     public void sorthigh() {
         String assert1 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[1]/div/div/div[2]/div/a/div[1]	")).getText();
-        System.out.println(assert1);
+        System.out.println(assert1 + " first listing details ");
         String[] outputtest = assert1.split(" M²");
         int i = Integer.parseInt(outputtest[0]);
         System.out.println(i);
         String assert2 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[6]/div/div/div[2]/div/a/div[1]")).getText();
-        System.out.println(assert2);
+        System.out.println(assert2 + "  3rd listing details ");
         String[] outputtest2 = assert2.split(" M²");
         int i2 = Integer.parseInt(outputtest2[0]);
         System.out.println(i2);
         String assert3 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[14]/div/div/div[2]/div/a/div[1]")).getText();
-        System.out.println(assert3);
+        System.out.println(assert3 + "  14th listing details ");
         String[] outputtest3 = assert3.split(" M²");
         int i3 = Integer.parseInt(outputtest3[0]);
         System.out.println(i3);
@@ -62,17 +62,17 @@ public class SortSize extends TestBase {
 
     public void sortsmall() {
         String assert1 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[1]/div/div/div[2]/div/a/div[1]	")).getText();
-        System.out.println(assert1);
+        System.out.println(assert1 + " first listing details ");
         String[] outputtest = assert1.split(" M²");
         int i = Integer.parseInt(outputtest[0]);
         System.out.println(i);
         String assert2 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[6]/div/div/div[2]/div/a/div[1]")).getText();
-        System.out.println(assert2);
+        System.out.println(assert2 + " 3rd listing details ");
         String[] outputtest2 = assert2.split(" M²");
         int i2 = Integer.parseInt(outputtest2[0]);
         System.out.println(i2);
         String assert3 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div[4]/div[2]/section/div/div[1]/ul/div[14]/div/div/div[2]/div/a/div[1]")).getText();
-        System.out.println(assert3);
+        System.out.println(assert3 + " 14th listing details");
         String[] outputtest3 = assert3.split(" M²");
         int i3 = Integer.parseInt(outputtest3[0]);
         System.out.println(i3);

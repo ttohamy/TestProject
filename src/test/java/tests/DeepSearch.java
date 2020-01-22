@@ -17,6 +17,7 @@ public class DeepSearch extends TestBase {
     public void inputsearch_critria() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         driver.navigate().to("https://aqarmap.com.eg/ar/");
+        System.out.println("choose 1 location");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search_btn")));
         hp = new HomePage(driver);
         hp.opentype.click();
@@ -24,6 +25,7 @@ public class DeepSearch extends TestBase {
         hp.searchbar.sendKeys("مدينة نص");
         Thread.sleep(2500);
         hp.suggestloc1.click();
+        System.out.println("success picked form suggested location nasr city");
         hp.searchbtn.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search_btn")));
     }
@@ -45,7 +47,7 @@ public class DeepSearch extends TestBase {
         driver.close();
         driver.switchTo().window(tabs2.get(0));
         assertTrue(driver.getPageSource().contains("مدينة نص"));
-
+System.out.println("success choose 2 location from suggested");
     }
 
     @Test(priority = 3)
@@ -79,6 +81,7 @@ public class DeepSearch extends TestBase {
             System.out.println("Search success");
         } else System.out.println("ERROR ERROR ERROR ERROR ERROR ERROR");
         driver.switchTo().window(tabs2.get(0));
+        System.out.println(" listings are found within sharm and north coast. success");
     }
 
     @Test(priority = 4)
@@ -102,6 +105,8 @@ public class DeepSearch extends TestBase {
         } else System.out.println("ERROR ERROR ERROR ERROR ERROR ERROR");
 //driver.close();
         driver.switchTo().window(tabs2.get(0));
+        System.out.println(" listings are found within sharm and north coast. success");
+
     }
 
 }
