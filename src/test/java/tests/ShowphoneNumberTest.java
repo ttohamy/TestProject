@@ -1,7 +1,6 @@
 package tests;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
+import org.testng.annotations.Test;
 import pages.AdminPanelLeadsPage;
 import pages.HomePage;
 import pages.ListingDetailsPage;
@@ -31,11 +30,12 @@ public class ShowphoneNumberTest extends TestBase {
 		openShowPhoneNumberListing();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		Assert.assertTrue(isMailDelivered(name));
+		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
+		softAssert.assertTrue(isMailDelivered(name));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2484708",driver));
+		softAssert.assertAll();
 		clearData();
 	}
 
@@ -52,11 +52,12 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		Assert.assertTrue(isMailDelivered("aqarmap live"));
+		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
+		softAssert.assertTrue(isMailDelivered("aqarmap live"));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded("Aqarmap Live","100077895","2484708",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded("Aqarmap Live","100077895","2484708",driver));
+		softAssert.assertAll();
 		refresh();
 		clearData();
 	}
@@ -76,11 +77,12 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.submitQuickRegistrationForm();
 		openShowPhoneNumberListing();
 		listingDetailsObject.openQuickRegistrationPopUp();
-		Assert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		Assert.assertTrue(isMailDelivered("md"));
+		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
+		softAssert.assertTrue(isMailDelivered("md"));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded("md","1118608831","2484708",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded("md","1118608831","2484708",driver));
+		softAssert.assertAll();
 		clearData();
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){

@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 import utilities.EmailUtils;
 import utilities.PropertyManager;
 
@@ -26,6 +27,11 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 	public static WebDriver driver ;
 	public static EmailUtils emailUtils;
+	public SoftAssert softAssert ;
+	@BeforeClass
+	protected void getSoftAssert(){
+		softAssert = new SoftAssert();
+	}
 	@BeforeClass
 	public static void connectToEmail() {
 		try {

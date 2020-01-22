@@ -1,7 +1,6 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AdminPanelLeadsPage;
 import pages.HomePage;
@@ -35,10 +34,11 @@ public class SendMessageTest extends TestBase {
         waitForLoad(driver);
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(name, email, phoneNumber);
-        Assert.assertTrue(listingDetailsObject.isChatModalAppear());
+        softAssert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        softAssert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        softAssert.assertAll();
         clearData();
 
     }
@@ -53,11 +53,12 @@ public class SendMessageTest extends TestBase {
         waitForLoad(driver);
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(name, username2, phoneNumber);
-        Assert.assertTrue(listingDetailsObject.isChatModalAppear());
+        softAssert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        softAssert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+        softAssert.assertAll();
         clearData();
     }
 
@@ -78,11 +79,12 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.closeNotificationModal();
         listingDetailsObject.openQuickRegistrationPopUpChat();
         listingDetailsObject.fillQuickRegistration(username4);
-        Assert.assertTrue(listingDetailsObject.isChatModalAppear());
+        softAssert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         refresh();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
+        softAssert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
+        softAssert.assertAll();
         clearData();
     }
 
@@ -103,10 +105,11 @@ public class SendMessageTest extends TestBase {
         listingDetailsObject.fillQuickRegistration(username3);
         openRequestCallListing();
         listingDetailsObject.openQuickRegistrationPopUpChat();
-        Assert.assertTrue(listingDetailsObject.isChatModalAppear());
+        softAssert.assertTrue(listingDetailsObject.isChatModalAppear());
         clearData();
         openLoginPage();
-        Assert.assertTrue(adminPage.isLeadAdded("md","1118608831","2497109",driver));
+        softAssert.assertTrue(adminPage.isLeadAdded("md","1118608831","2497109",driver));
+        softAssert.assertAll();
         clearData();
     }
 

@@ -1,7 +1,6 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AdminPanelLeadsPage;
 import pages.HomePage;
@@ -23,7 +22,6 @@ public class RequestCallTest extends TestBase {
 	String username5 = PropertyManager.getInstance().getUsername5();
 	String password5 = PropertyManager.getInstance().getPassword5();
 	AdminPanelLeadsPage adminPage ;
-
 	@Test(priority=0)
 	public void newUserCanInitiatLead()  {
 		System.out.println("New user try to Request a Call ....");
@@ -35,13 +33,13 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.fillQuickRegistration(name,phoneNumber);
 		listingDetailsObject.waitUntilAlertAppears();
 		driver.switchTo().alert().accept();
-		Assert.assertTrue(listingDetailsObject.isRequestSent(driver));
-		Assert.assertTrue(isMailDelivered(name));
+		softAssert.assertTrue(listingDetailsObject.isRequestSent(driver));
+		softAssert.assertTrue(isMailDelivered(name));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded(name,phoneNumber,"2497109",driver));
+		softAssert.assertAll();
 		clearData();
-
 	}
 
 	@Test(priority=1)
@@ -59,13 +57,14 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
-		Assert.assertTrue(requestStatus);
-		Assert.assertTrue(isMailDelivered("tohamy"));
+		softAssert.assertTrue(requestStatus);
+		softAssert.assertTrue(isMailDelivered("tohamy"));
 		clearData();
 		refresh();
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded("Tohamy","126606622","2497109",driver));
+		softAssert.assertAll();
 		clearData();
 	}
 
@@ -86,11 +85,12 @@ public class RequestCallTest extends TestBase {
 		openRequestCallListing();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
-		Assert.assertTrue(requestStatus);
-		Assert.assertTrue(isMailDelivered("ahmed nagy"));
+		softAssert.assertTrue(requestStatus);
+		softAssert.assertTrue(isMailDelivered("ahmed nagy"));
 		clearData();
 		openLoginPage();
-		Assert.assertTrue(adminPage.isLeadAdded("Ahmed Nagy","1061679853","2497109",driver));
+		softAssert.assertTrue(adminPage.isLeadAdded("Ahmed Nagy","1061679853","2497109",driver));
+		softAssert.assertAll();
 		clearData();
 	}
 	private static ListingDetailsPage mockListingDetailsPage(){
