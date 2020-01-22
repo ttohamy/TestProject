@@ -68,6 +68,7 @@ public class Filters_price extends TestBase {
         Assert.assertTrue(i2 < 3000000, "assert 2. not higher than the max price");
         Assert.assertTrue(i3 > 2000000, "assert 3. not lower than the min price");
         Assert.assertTrue(i3 < 3000000, "assert 3. not higher than the max price");
+        System.out.println("success, all listings are within the price range");
     }
 
 }
