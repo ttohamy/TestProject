@@ -15,10 +15,10 @@ public class PageBase {
 		wait = new WebDriverWait(driver, 30);
 
 	}
-	protected static void click(WebElement element) {
+	protected void click(WebElement element) {
 		element.click();
 	}
-	protected static void addTextToElement(WebElement element , String value) {
+	protected void addTextToElement(WebElement element , String value) {
 		element.sendKeys(value);
 	}
 
