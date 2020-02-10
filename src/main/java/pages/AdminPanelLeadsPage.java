@@ -36,10 +36,10 @@ public class AdminPanelLeadsPage extends PageBase {
 
 
 
-	public boolean isLeadAdded(String name , String phoneNumber, String listingId,WebDriver driver){
+	public boolean isLeadAdded(String local , String name , String phoneNumber, String listingId,WebDriver driver){
 		LoginPage loginPage = new LoginPage(driver);
 		String pattern = "yyyy-MM-dd";
-		loginPage.login(adminUser,adminPassword);
+		loginPage.login("ksa",adminUser,adminPassword);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 		String startDate = simpleDateFormat.format(new Date());
 		Calendar c = Calendar.getInstance();
@@ -50,9 +50,15 @@ public class AdminPanelLeadsPage extends PageBase {
 			System.out.println("issue");
 		}
 		String endDate = simpleDateFormat.format(c.getTime());
-		driver.get("https://aqarmap.com.eg/en/admin/leads/?search=listing_id&q="
-				+listingId+
-				"&start_date="+startDate+"&end_date="+endDate);
+		if(local.equalsIgnoreCase("eg")) {
+			driver.get("https://aqarmap.com.eg/en/admin/leads/?search=listing_id&q="
+					+ listingId +
+					"&start_date=" + startDate + "&end_date=" + endDate);
+		}else if(local.equalsIgnoreCase("ksa")){
+			driver.get("http://ksa.aqarmap.com/en/admin/leads/?search=listing_id&q="
+					+ listingId +
+					"&start_date=" + startDate + "&end_date=" + endDate);
+		}
 		boolean leadAppears = false;
 		try {
 
@@ -72,6 +78,46 @@ public class AdminPanelLeadsPage extends PageBase {
 			}else{
 			leadAppears = false;
 			System.out.println("Failed....The leads is not added to the DB");
+			}
+		}
+		return leadAppears;
+	}
+	public boolean isLeadAdded(String name , String phoneNumber, String listingId,WebDriver driver){
+		LoginPage loginPage = new LoginPage(driver);
+		String pattern = "yyyy-MM-dd";
+		loginPage.login(adminUser,adminPassword);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		String startDate = simpleDateFormat.format(new Date());
+		Calendar c = Calendar.getInstance();
+		try {
+			c.setTime(simpleDateFormat.parse(startDate));
+			c.add(Calendar.DATE, 1);
+		}catch (Exception e){
+			System.out.println("issue");
+		}
+		String endDate = simpleDateFormat.format(c.getTime());
+			driver.get("https://aqarmap.com.eg/en/admin/leads/?search=listing_id&q="
+					+ listingId +
+					"&start_date=" + startDate + "&end_date=" + endDate);
+		boolean leadAppears = false;
+		try {
+
+			while (paginationNextButton.isDisplayed()){
+				if(driver.getPageSource().contains(name)&&driver.getPageSource().contains(phoneNumber)){
+					System.out.println("Success...Lead is now on the DB");
+					leadAppears =true;
+					break;
+				}else {
+					click(paginationNextButton);
+				}
+			}
+		}catch (Exception e){
+			if(driver.getPageSource().contains(name)&&driver.getPageSource().contains(phoneNumber)){
+				System.out.println("Success...Lead is now on the DB");
+				leadAppears =true;
+			}else{
+				leadAppears = false;
+				System.out.println("Failed....The leads is not added to the DB");
 			}
 		}
 		return leadAppears;
