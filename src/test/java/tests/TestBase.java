@@ -1,10 +1,7 @@
 package tests;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -53,6 +50,9 @@ public class TestBase {
 		
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions options = new ChromeOptions();
+			options.setPageLoadStrategy(PageLoadStrategy.NONE);
+			driver = new ChromeDriver(options);
 			driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("firefox"))
@@ -68,6 +68,7 @@ public class TestBase {
 			System.out.println("Headless is perfect");
 			ChromeOptions option = new  ChromeOptions();
 			option.addArguments("--headless");
+			option.setPageLoadStrategy(PageLoadStrategy.NONE);
 			option.addArguments("window-size=2000,3000");
 			driver = new ChromeDriver(option);
 		}

@@ -121,12 +121,12 @@ public class TestBase {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(pageLoadCondition);
 	}
-	public boolean isMailDelivered(String mailContent){
+	public boolean isMailDelivered(String leadCreator , String listingTitle){
 		try {
 			Thread.sleep(7000);
 			Message msg = emailUtils.getLatestMessage();
 			String msgContent = emailUtils.getMessageContent(msg).toLowerCase();
-			if(msgContent.contains(mailContent.toLowerCase())) {
+			if(msgContent.contains(leadCreator.toLowerCase())&&msgContent.contains(listingTitle.toLowerCase())) {
 				System.out.println("success.....Mail sent");
 				return true;
 			}else{
