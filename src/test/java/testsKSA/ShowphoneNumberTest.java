@@ -32,7 +32,7 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.fillQuickRegistration(name,email,phoneNumber);
 		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		softAssert.assertTrue(isMailDelivered(name));
+		softAssert.assertTrue(isMailDelivered(name,"test show"));
 		clearData();
 		openLoginPage();
 		softAssert.assertTrue(adminPage.isLeadAdded("ksa",name,phoneNumber,"159202",driver));
@@ -53,7 +53,7 @@ public class ShowphoneNumberTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
 		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		softAssert.assertTrue(isMailDelivered("aqarmap live"));
+		softAssert.assertTrue(isMailDelivered("aqarmap live","test show"));
 		clearData();
 		openLoginPage();
 		softAssert.assertTrue(adminPage.isLeadAdded("ksa","Aqarmap Live","9661004267878","159202",driver));
@@ -77,7 +77,7 @@ public class ShowphoneNumberTest extends TestBase {
 		openShowPhoneNumberListing();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		softAssert.assertTrue(listingDetailsObject.isPhoneNumberAppear(driver));
-		softAssert.assertTrue(isMailDelivered("md"));
+		softAssert.assertTrue(isMailDelivered("md","test show"));
 		clearData();
 		openLoginPage();
 		softAssert.assertTrue(adminPage.isLeadAdded("ksa","md","9661111115458","159202",driver));

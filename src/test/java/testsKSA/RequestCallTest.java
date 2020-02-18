@@ -35,7 +35,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.waitUntilAlertAppears();
 		driver.switchTo().alert().accept();
 		softAssert.assertTrue(listingDetailsObject.isRequestSent(driver));
-		softAssert.assertTrue(isMailDelivered(name));
+		softAssert.assertTrue(isMailDelivered(name,"test request"));
 		clearData();
 		openLoginPage();
 		softAssert.assertTrue(adminPage.isLeadAdded("ksa",name,phoneNumber,"159203",driver));
@@ -58,7 +58,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.submitQuickRegistrationForm();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		softAssert.assertTrue(requestStatus);
-		softAssert.assertTrue(isMailDelivered("tohamy"));
+		softAssert.assertTrue(isMailDelivered("tohamy","test request"));
 		clearData();
 		refresh();
 		clearData();
@@ -85,7 +85,7 @@ public class RequestCallTest extends TestBase {
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		boolean requestStatus = listingDetailsObject.isRequestSent(driver);
 		softAssert.assertTrue(requestStatus);
-		softAssert.assertTrue(isMailDelivered("ahmed nagy"));
+		softAssert.assertTrue(isMailDelivered("ahmed nagy","test request"));
 		clearData();
 		openLoginPage();
 		softAssert.assertTrue(adminPage.isLeadAdded("ksa","ahmed nagy","9661061679853","159203",driver));

@@ -43,7 +43,7 @@ public class LoginPage extends PageBase {
 		click(loginButtonKsa);
 		}
 		try {
-			wait.until(ExpectedConditions.urlToBe("https://ksa.aqarmap.com/ar/"));
+			wait.until(ExpectedConditions.urlToBe("http://ksa.aqarmap.com/ar/"));
 			System.out.println("Success...Now the user is logged in");
 		}catch (Exception e){
 			System.out.println("Failed...i can't log in");
