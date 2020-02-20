@@ -69,7 +69,7 @@ public class RequestCallTest extends TestBase {
 	}
 
 	@Test(priority=2)
-	public void loggedInUserCanInitiatLeadSecondtTime() {
+	public void loggedInUserCanInitiatLeadSecondtTime() throws InterruptedException {
 		System.out.println("Logged in user try to Request a Call for second time .....");
 		removeStorage();
 		listingDetailsObject = mockListingDetailsPage();
@@ -78,6 +78,7 @@ public class RequestCallTest extends TestBase {
 		adminPage = new AdminPanelLeadsPage(driver);
 		openLoginPage();
 		loginObject.login(username5,password5);
+		listingDetailsObject.closeNotificationModal();
 		openShowPhoneNumberListing();
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
