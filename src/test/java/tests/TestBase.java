@@ -53,7 +53,6 @@ public class TestBase {
 			ChromeOptions options = new ChromeOptions();
 			options.setPageLoadStrategy(PageLoadStrategy.NONE);
 			driver = new ChromeDriver(options);
-			driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("firefox"))
 			driver = new FirefoxDriver();
@@ -132,7 +131,6 @@ public class TestBase {
 				return true;
 			}else{
 				System.out.println("Failed.....Mail Not Delivered");
-				System.out.println("Mail Subject is : "+msgContent);
 				return false;
 			}
 		} catch (Exception e) {

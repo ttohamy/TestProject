@@ -59,6 +59,7 @@ public class ListingDetailsPage extends PageBase {
 	public void submitQuickRegistrationForm(){
 		wait.until(ExpectedConditions.elementToBeClickable(quickRegisterationLeadButton));
 		click(quickRegisterationLeadButton);
+		wait.until(ExpectedConditions.invisibilityOf(quickRegisterationLeadButton));
 	}
 	public void openQuickRegistrationPopUp()  {
 		wait.until(ExpectedConditions.elementToBeClickable(showPhoneNumberButton));
