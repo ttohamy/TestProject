@@ -40,7 +40,7 @@ public class ShowphoneNumberTest extends TestBase {
 	}
 
 	@Test(priority=1)
-	public void loggedInUserCanInitiatLeadFirstTime(){
+	public void loggedInUserCanInitiatLeadFirstTime() throws InterruptedException {
 		System.out.println("Logged in user try to Show Phone Number for first time ....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
@@ -49,6 +49,7 @@ public class ShowphoneNumberTest extends TestBase {
 		openLoginPage();
 		loginObject.login(username2,password2);
 		openShowPhoneNumberListing();
+		Thread.sleep(2000);
 		listingDetailsObject.closeNotificationModal();
 		listingDetailsObject.openQuickRegistrationPopUp();
 		listingDetailsObject.submitQuickRegistrationForm();
@@ -63,7 +64,7 @@ public class ShowphoneNumberTest extends TestBase {
 	}
 
 	@Test(priority=2)
-	public void loggedInUserCanInitiatLeadSecondtTime() {
+	public void loggedInUserCanInitiatLeadSecondtTime() throws InterruptedException {
 		System.out.println("Logged in user try to Show Phone Number for second time .....");
 		listingDetailsObject = mockListingDetailsPage();
 		loginObject = mockLoginPage();
@@ -73,6 +74,7 @@ public class ShowphoneNumberTest extends TestBase {
 		loginObject.login(username3,password3);
 		openRequestCallListing();
 		listingDetailsObject.closeNotificationModal();
+		refresh();
 		listingDetailsObject.openQuickRegistrationPopUpRequestCall();
 		listingDetailsObject.submitQuickRegistrationForm();
 		openShowPhoneNumberListing();
