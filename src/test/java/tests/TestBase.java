@@ -90,7 +90,7 @@ public class TestBase {
 
 	public static void openShowPhoneNumberListing() {
 		driver.navigate().to("https://aqarmap.com.eg/ar/listing/2484708-for-rent-apartment-sharqia");
-		waitForLoad(driver);
+//		waitForLoad(driver);
 	}
 	public static  void openLoginPage(){
 		driver.navigate().to("https://aqarmap.com.eg/ar/login");

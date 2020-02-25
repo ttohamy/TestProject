@@ -110,6 +110,8 @@ public class ListingDetailsPage extends PageBase {
 			wait.until(ExpectedConditions.elementToBeClickable(notificationModalCloseButton));
 			notificationModalCloseButton.click();
 			wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+			wait.until(ExpectedConditions.invisibilityOf(notificationModalCloseButton));
+
 		}catch (Exception e){
 		}
 	}
