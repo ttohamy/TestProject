@@ -4,7 +4,6 @@
 	<test name="regression test">
 		<classes>
 			<class name="tests.ShowphoneNumberTest" />
-			<class name="tests.RequestCallTest" />
 			<class name="tests.SendMessageTest" />
 		</classes>
 	</test>

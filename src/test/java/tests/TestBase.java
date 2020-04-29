@@ -1,5 +1,6 @@
 package tests;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,12 +8,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utilities.EmailUtils;
-import utilities.PropertyManager;
 
 import javax.mail.Message;
 import java.io.File;
@@ -21,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests {
 	public static WebDriver driver ;
 	public static EmailUtils emailUtils;
 	public SoftAssert softAssert ;
@@ -29,20 +28,20 @@ public class TestBase {
 	protected void getSoftAssert(){
 		softAssert = new SoftAssert();
 	}
-	@BeforeClass
-	public static void connectToEmail() {
-		try {
-			String username = PropertyManager.getInstance().getUsername1();
-			String password = PropertyManager.getInstance().getPassword1();
-			emailUtils = new EmailUtils(username, password, "smtp.gmail.com", EmailUtils.EmailFolder.INBOX);
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-	}
+//	@BeforeClass
+//	public static void connectToEmail() {
+//		try {
+//			String username = PropertyManager.getInstance().getUsername1();
+//			String password = PropertyManager.getInstance().getPassword1();
+//			emailUtils = new EmailUtils(username, password, "smtp.gmail.com", EmailUtils.EmailFolder.INBOX);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			Assert.fail(e.getMessage());
+//		}
+//	}
 	@BeforeClass
 	@Parameters({"browser"})
-	public void startDriver(@Optional("chrome") String browserName) {
+	public void startDriver(@Optional("firefox") String browserName) {
 		if(System.getProperty("os.name").toLowerCase().contains("windows"))
 		{
 		  	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");
@@ -77,9 +76,9 @@ public class TestBase {
 
 	}
 	@AfterClass
-	public void closeDriver() {
-		driver.quit(); //
-	}
+//	public void closeDriver() {
+//		driver.quit(); //
+//	}
 	public void removeStorage(){
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.localStorage.clear();");

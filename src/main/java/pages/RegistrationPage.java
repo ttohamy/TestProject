@@ -27,7 +27,7 @@ public class RegistrationPage extends PageBase {
     WebElement confirmPasswordText ;
     @FindBy(xpath="/html/body/div[4]/section/div/div/div[2]/form/button")
     WebElement nextButton ;
-    @FindBy(xpath="/html/body/div[4]/div[4]/div/div")
+    @FindBy(xpath="(//div[@class='alert alert-success alert-dismissable'])[2]")
     WebElement successMessage;
     public void register(){
         wait.until(ExpectedConditions.elementToBeClickable(usernameText));
@@ -42,6 +42,7 @@ public class RegistrationPage extends PageBase {
             System.out.println("Success...The user registered successfully");
         else
             System.out.println("Failed...The user doesn't registered");
+        System.out.println(successMessage.getText());
 
 
     }
