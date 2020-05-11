@@ -43,7 +43,21 @@ public class RegistrationPage extends PageBase {
         else
             System.out.println("Failed...The user doesn't registered");
         System.out.println(successMessage.getText());
-
-
     }
+    public void register(String username , String phoneNumber , String email , String password){
+        wait.until(ExpectedConditions.elementToBeClickable(usernameText));
+        addTextToElement(usernameText,username);
+        addTextToElement(phoneNumberText,phoneNumber);
+        addTextToElement(emailText,email);
+        addTextToElement(passwordText,password);
+        addTextToElement(confirmPasswordText,password);
+        click(nextButton);
+        wait.until(ExpectedConditions.urlToBe("https://aqarmap.com.eg/ar/register/confirmed"));
+        if(successMessage.isDisplayed())
+            System.out.println("Success...The user registered successfully");
+        else
+            System.out.println("Failed...The user doesn't registered");
+        System.out.println(successMessage.getText());
+    }
+
 }

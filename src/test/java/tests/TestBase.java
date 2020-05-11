@@ -76,9 +76,9 @@ public class TestBase extends AbstractTestNGCucumberTests {
 
 	}
 	@AfterClass
-//	public void closeDriver() {
-//		driver.quit(); //
-//	}
+	public void closeDriver() {
+		driver.quit(); //
+	}
 	public void removeStorage(){
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.localStorage.clear();");
