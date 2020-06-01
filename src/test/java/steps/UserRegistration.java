@@ -23,11 +23,16 @@ public class UserRegistration extends TestBase {
     public void i_click_on_register_button() {
         Assert.assertTrue(driver.getCurrentUrl().contains("register"));
     }
-    @When("I entered the user data")
-    public void i_entered_the_user_data() {
-        registerObject.register();
-    }
 
+//    @When("I entered the user data")
+//    public void i_entered_the_user_data() {
+//        registerObject.register();
+//    }
+
+    @When("I entered the {string} , {string} ,{string} ,{string}")
+    public void i_entered_the(String username, String email, String phoneNumber, String password) {
+        registerObject.register(username,email,phoneNumber,password);
+    }
     @Then("The registration page displayed successfully")
     public void the_registration_page_displayed_successfully() {
         Assert.assertTrue(driver.getCurrentUrl().contains("aqarmap"));
