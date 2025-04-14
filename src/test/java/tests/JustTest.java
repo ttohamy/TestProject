@@ -20,7 +20,7 @@ public class JustTest extends TestBase {
         try {
             String user  =  db_connection();
             Assert.assertTrue(user.contains("testing@gmail.com"));
-            System.out.println("test");
+            System.out.println("testing");
             System.out.println(user);
         } catch (SQLException e) {
             e.printStackTrace();
