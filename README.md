@@ -1,6 +1,6 @@
 QA Project
 ========
-This project is rewrite for testing the End-To-End aqarmap.com Website
+This project is rewrite for testing the End-To-End aqarmap.com Website.
 
 Stack Requirements
 --------
