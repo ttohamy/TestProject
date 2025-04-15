@@ -1,4 +1,4 @@
-QA Project
+QA Project.
 ========
 This project is rewrite for testing the End-To-End aqarmap.com Website.
 
